@@ -30,6 +30,7 @@ const InfoScreen = ({ route, navigation }) => {
               onPress={() => {
                 navigation.goBack();
               }}
+              style={{padding:6}}
             >
               <AntDesign name="left" size={24} color="red" />
             </TouchableOpacity>
@@ -120,6 +121,7 @@ const styles = StyleSheet.create({
   },
   firstNav: {
     flexDirection: "row",
+    alignItems: "center",
   },
   secondNav: {
     flexDirection: "row",
