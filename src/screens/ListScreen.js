@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, TouchableOpacity } from "react-native";
 import BlogItem from "../component/BlogItem";
 
 function ListScreen({ navigation }) {
@@ -39,9 +39,17 @@ function ListScreen({ navigation }) {
         showsVerticalScrollIndicator={false}
         data={blogposts}
         renderItem={({ item }) => {
-          return <BlogItem post={item} />;
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("InfoScreen",{post:item});
+              }}
+            >
+              <BlogItem post={item} />
+            </TouchableOpacity>
+          );
         }}
-        keyExtractor={(item, index)=>index}
+        keyExtractor={(item, index) => index}
       />
     </View>
   );

@@ -4,7 +4,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import ListScreen from "./src/screens/ListScreen";
 import InfoScreen from "./src/screens/InfoScreen";
-import { FontAwesome, EvilIcons, Fontisto } from "@expo/vector-icons";
+import {
+  FontAwesome,
+  EvilIcons,
+  Fontisto,
+  AntDesign,
+  MaterialIcons,
+} from "@expo/vector-icons";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -14,6 +20,7 @@ export default function App() {
         <Stack.Screen
           options={{
             title: "Discover",
+
             headerTitleAlign: "center",
             headerLeft: () => (
               <View style={{ marginLeft: 10 }}>
@@ -30,7 +37,13 @@ export default function App() {
           name="ListScreen"
           component={ListScreen}
         />
-        <Stack.Screen name="InfoScreen" component={InfoScreen} />
+        <Stack.Screen
+          options={{
+            header: () => null,
+          }}
+          name="InfoScreen"
+          component={InfoScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
