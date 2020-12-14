@@ -17,7 +17,7 @@ import {
 const InfoScreen = ({ route, navigation }) => {
   let { post } = route.params;
   return (
-    <ScrollView style={styles.mainBlogItemContainer}>
+    <ScrollView  showsVerticalScrollIndicator={false} style={styles.mainBlogItemContainer}>
       <View>
         <View style={styles.Lshape}>
           <View style={styles.LshapeOne} />
